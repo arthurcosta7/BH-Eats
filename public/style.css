@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #fbf2e8;
     color: #2b2b2b;
@@ -198,10 +202,40 @@ section {
 }
 
 #top5-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem;
     border-bottom: 1px solid #eee;
+}
+
+.top5-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.top5-img--placeholder {
+    background-color: #e8d9c8;
+}
+
+.top5-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.top5-info strong {
+    font-size: 1.1rem;
+}
+
+.top5-info p {
+    font-size: 0.85rem;
+    color: #666;
 }
 
 footer {
