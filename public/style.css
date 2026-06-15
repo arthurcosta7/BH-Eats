@@ -618,3 +618,8 @@ a.categoria-item {
         font-size: 1.8rem;
     }
 }
+
+#login-button {
+    background-color: #ffa600;
+    border-radius: 4px;
+}
