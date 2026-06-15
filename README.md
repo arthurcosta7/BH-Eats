@@ -1,4 +1,4 @@
-# Restaurantes BH
+# BH Eats
 
 Catálogo web de restaurantes de Belo Horizonte, com listagem por categoria, página de detalhes e ranking dos melhores avaliados. Desenvolvido como projeto da disciplina de Desenvolvimento de Interfaces Web (PUC Minas), consumindo uma API REST simulada com JSON Server.
 
