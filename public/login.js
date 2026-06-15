@@ -12,6 +12,7 @@
 
 // Página inicial de Login
 const LOGIN_URL = "login.html";
+const CADASTRO_URL = "cadastro.html";
 let RETURN_URL = "index.html";
 const API_URL = '/usuarios';
 
@@ -25,10 +26,13 @@ var usuarioCorrente = {};
 function initLoginApp () {
     let pagina = window.location.pathname;
     let estaNaPaginaDeLogin = pagina.endsWith('/' + LOGIN_URL) || pagina === LOGIN_URL;
+    let estaNaPaginaDeCadastro = pagina.endsWith('/' + CADASTRO_URL) || pagina === CADASTRO_URL;
     if (!estaNaPaginaDeLogin) {
-        // CONFIGURA A URLS DE RETORNO COMO A PÁGINA ATUAL
-        sessionStorage.setItem('returnURL', pagina);
-        RETURN_URL = pagina;
+        // CONFIGURA A URL DE RETORNO COMO A PÁGINA ATUAL, EXCETO SE FOR A PRÓPRIA PÁGINA DE CADASTRO
+        if (!estaNaPaginaDeCadastro) {
+            sessionStorage.setItem('returnURL', pagina);
+            RETURN_URL = pagina;
+        }
 
         // INICIALIZA USUARIOCORRENTE A PARTIR DE DADOS NO LOCAL STORAGE, CASO EXISTA
         usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
@@ -44,7 +48,16 @@ function initLoginApp () {
     else {
         // VERIFICA SE A URL DE RETORNO ESTÁ DEFINIDA NO SESSION STORAGE, CASO CONTRARIO USA A PÁGINA INICIAL
         let returnURL = sessionStorage.getItem('returnURL');
-        RETURN_URL = returnURL || RETURN_URL
+
+        // IGNORA URL DE RETORNO ARMAZENADA (POSSIVELMENTE ANTIGA) QUE APONTE PARA LOGIN OU CADASTRO
+        let returnURLInvalida = returnURL && (
+            returnURL.endsWith('/' + LOGIN_URL) || returnURL === LOGIN_URL ||
+            returnURL.endsWith('/' + CADASTRO_URL) || returnURL === CADASTRO_URL
+        );
+
+        if (returnURL && !returnURLInvalida) {
+            RETURN_URL = returnURL;
+        }
     }
 
     // INICIALIZA BANCO DE DADOS DE USUÁRIOS
