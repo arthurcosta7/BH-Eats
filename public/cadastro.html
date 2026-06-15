@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - BH Eats</title>
-    <link rel="stylesheet" href="style.css"></link>
+    <title>Register - BH Eats</title>
+    <link rel="stylesheet" href="style.css">
     <script defer src="login.js"></script>
 </head>
 <body>
-    <header>
+        <header>
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">BH Eats</a>
@@ -26,16 +26,22 @@
         <section class="login-page">
             <a href="index.html" class="voltar-link">← Voltar à página inicial</a>
             <div class="login-container">
-                <h1>Login</h1>
-                <form id="login-form">
+                <h1>Cadastro</h1>
+                <form id="cadastro-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
                     <label for="login">Usuário:</label>
                     <input type="text" id="login" name="login" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
 
                     <label for="senha">Senha:</label>
                     <input type="password" id="senha" name="senha" required>
 
-                    <button type="submit">Entrar</button>
-                    <a href="cadastro.html" id="cadastro-link">Cadastre-se</a>
+                    <button type="submit">Cadastrar</button>
+                    <a href="login.html" id="cadastro-link">Login</a>
                 </form>
                 <p id="login-message" class="login-message"></p>
             </div>

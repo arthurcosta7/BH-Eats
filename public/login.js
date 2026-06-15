@@ -11,12 +11,12 @@
 
 
 // Página inicial de Login
-const LOGIN_URL = "/login.html";
-let RETURN_URL = "/index.html";
+const LOGIN_URL = "login.html";
+let RETURN_URL = "index.html";
 const API_URL = '/usuarios';
 
 // Objeto para o banco de dados de usuários baseado em JSON
-var db_usuarios = {};
+var db_usuarios = [];
 
 // Objeto para o usuário corrente
 var usuarioCorrente = {};
@@ -24,7 +24,8 @@ var usuarioCorrente = {};
 // Inicializa a aplicação de Login
 function initLoginApp () {
     let pagina = window.location.pathname;
-    if (pagina != LOGIN_URL) {
+    let estaNaPaginaDeLogin = pagina.endsWith('/' + LOGIN_URL) || pagina === LOGIN_URL;
+    if (!estaNaPaginaDeLogin) {
         // CONFIGURA A URLS DE RETORNO COMO A PÁGINA ATUAL
         sessionStorage.setItem('returnURL', pagina);
         RETURN_URL = pagina;
@@ -33,8 +34,6 @@ function initLoginApp () {
         usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
         if (usuarioCorrenteJSON) {
             usuarioCorrente = JSON.parse (usuarioCorrenteJSON);
-        } else {
-            window.location.href = LOGIN_URL;
         }
 
         // REGISTRA LISTENER PARA O EVENTO DE CARREGAMENTO DA PÁGINA PARA ATUALIZAR INFORMAÇÕES DO USUÁRIO
@@ -46,12 +45,12 @@ function initLoginApp () {
         // VERIFICA SE A URL DE RETORNO ESTÁ DEFINIDA NO SESSION STORAGE, CASO CONTRARIO USA A PÁGINA INICIAL
         let returnURL = sessionStorage.getItem('returnURL');
         RETURN_URL = returnURL || RETURN_URL
-        
-        // INICIALIZA BANCO DE DADOS DE USUÁRIOS
-        carregarUsuarios(() => {
-            console.log('Usuários carregados...');
-        });
     }
+
+    // INICIALIZA BANCO DE DADOS DE USUÁRIOS
+    carregarUsuarios(() => {
+        console.log('Usuários carregados...');
+    });
 };
 
 
@@ -101,6 +100,11 @@ function logoutUser () {
     window.location = LOGIN_URL;
 }
 
+// Verifica se já existe um usuário cadastrado com o mesmo login ou email
+function usuarioExiste (login, email) {
+    return db_usuarios.some(usuario => usuario.login === login || usuario.email === email);
+}
+
 function addUser (nome, login, senha, email) {
 
     // Cria um objeto de usuario para o novo usuario 
@@ -126,6 +130,16 @@ function addUser (nome, login, senha, email) {
         });
 }
 
+// Exibe uma mensagem para o usuário na página atual
+function displayMessage (msg) {
+    var elemMsg = document.getElementById('login-message');
+    if (elemMsg) {
+        elemMsg.textContent = msg;
+    } else {
+        console.log(msg);
+    }
+}
+
 function showUserInfo (element) {
     var elemUser = document.getElementById(element);
     if (elemUser) {
@@ -136,3 +150,47 @@ function showUserInfo (element) {
 
 // Inicializa as estruturas utilizadas pelo LoginApp
 initLoginApp ();
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Registra o evento de submit do formulário de login
+    let formLogin = document.getElementById('login-form');
+    if (!formLogin) return;
+    formLogin.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let login = document.getElementById('login').value;
+        let senha = document.getElementById('senha').value;
+        if (!login || !senha) {
+            displayMessage("Por favor, preencha todos os campos.");
+            return;
+        }
+        if (loginUser(login, senha)) {
+            window.location.href = RETURN_URL;
+        } else {
+            displayMessage("Login ou senha inválidos.");
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Registra o evento de submit do formulário de cadastro
+    let formCadastro = document.getElementById('cadastro-form');
+    if (!formCadastro) return;
+    formCadastro.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let nome = document.getElementById('nome').value;
+        let login = document.getElementById('login').value;
+        let email = document.getElementById('email').value;
+        let senha = document.getElementById('senha').value;
+        if (!nome || !login || !senha || !email) {
+            console.log("Por favor, preencha todos os campos.");
+            return;
+        }
+        if (usuarioExiste(login, email)) {
+            displayMessage("Já existe um usuário cadastrado com esse login ou email.");
+            return;
+        }
+        addUser(nome, login, senha, email);
+        formCadastro.reset();
+        window.location.href = LOGIN_URL;
+    });
+});

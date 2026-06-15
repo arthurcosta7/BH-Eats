@@ -117,4 +117,20 @@ function preencherTop5(restaurantes) {
     }).join('');
 }
 
+function atualizarBotaoLogin() {
+    const link = document.querySelector('#login-button a');
+    if (!link) return;
+
+    if (sessionStorage.getItem('usuarioCorrente')) {
+        link.textContent = 'Logout';
+        link.removeAttribute('href');
+        link.style.cursor = 'pointer';
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            logoutUser();
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', carregarPagina);
+document.addEventListener('DOMContentLoaded', atualizarBotaoLogin);

@@ -1,146 +1,153 @@
 {
-    "restaurantes": [
-        {
-            "id": 1,
-            "nome": "Xapuri",
-            "categoria": "Comida Mineira",
-            "endereco": "Rua Mandacaru, 260 - Pampulha, Belo Horizonte - MG",
-            "telefone": "(31) 3496-6198",
-            "horario": "Terça a Sábado: 11h - 22h | Domingo: 11h - 17h | Segunda: fechado",
-            "nota": 4.6,
-            "descricao": "Fundado em 1987, o Xapuri é referência nacional e internacional da culinária mineira. Ambiente rústico e aconchegante com loja de artesanato, hípica e atrações para crianças. Premiado pelo Guia 4 Rodas, Revista Veja e Encontro como Melhor Restaurante Regional.",
-            "imagem": "images/xapuri.jpg",
-            "site": "https://www.xapurirestaurante.com.br"
-        },
-        {
-            "id": 2,
-            "nome": "Glouton",
-            "categoria": "Alta Gastronomia Contemporânea",
-            "endereco": "Rua Bárbara Heliodora, 59 - Lourdes, Belo Horizonte - MG",
-            "telefone": "(31) 3292-4237",
-            "horario": "Segunda a Sábado: 19h - 23h | Domingo: fechado",
-            "nota": 4.6,
-            "descricao": "Restaurante do premiado chef Léo Paixão, listado entre os melhores da América Latina e do mundo. Gastronomia contemporânea sofisticada com menu degustação em ambiente elegante e intimista no bairro Lourdes.",
-            "imagem": "images/main_Glouton_-_Divulgacao_CAPA.png",
-            "site": "https://www.grupoglouton.com.br"
-        },
-        {
-            "id": 3,
-            "nome": "Dona Lucinha",
-            "categoria": "Comida Mineira",
-            "endereco": "Rua Padre Odorico, 38 - Savassi, Belo Horizonte - MG",
-            "telefone": "(31) 3281-0505",
-            "horario": "Segunda a Sábado: 11h - 22h | Domingo e Feriados: 11h - 17h",
-            "nota": 4.5,
-            "descricao": "Um dos mais tradicionais restaurantes de culinária mineira de BH, batizado em homenagem a Maria Lúcia Clementino Nunes. Referência gastronômica e turística da capital, preserva o gosto e a cultura alimentar dos tempos coloniais de Minas Gerais.",
-            "imagem": "https://imgmd.net/images/v1/guia/1686677/restaurante-dona-lucinha.jpg",
-            "site": "https://www.donalucinha.com.br"
-        },
-        {
-            "id": 4,
-            "nome": "Taste-Vin",
-            "categoria": "Francesa",
-            "endereco": "Rua Curitiba, 2105 - Lourdes, Belo Horizonte - MG",
-            "telefone": "(31) 3292-5423",
-            "horario": "Segunda a Terça: 19h - 23h | Quarta a Sexta: 19h - 00h | Sábado: 12h30 - 16h e 19h - 00h | Domingo: fechado",
-            "nota": 4.6,
-            "descricao": "Fundado em 1988, é um dos restaurantes franceses mais tradicionais de BH. Famoso pelos soufflés e por uma das maiores cartas de vinhos do Brasil, com mais de 800 rótulos. Ambiente intimista e aconchegante.",
-            "imagem": "https://boalembranca-production-secure.nyc3.cdn.digitaloceanspaces.com/826270f4-5a07-443f-9130-884be92690a2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=DO00V3H8NYFP64LYVFNQ%2F20260531%2Fnyc3%2Fs3%2Faws4_request&X-Amz-Date=20260531T025027Z&X-Amz-Expires=86400&X-Amz-Signature=008c097f50944df032c4404d8624b18e31e94faaf3c4f69c3bfd67e80616476f&X-Amz-SignedHeaders=host&response-content-disposition=inline&response-content-type=image%2Fjpeg&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-            "site": "https://www.tastevinbh.com.br"
-        },
-        {
-            "id": 5,
-            "nome": "Gennaro",
-            "categoria": "Italiana",
-            "endereco": "Rua Santa Catarina, 1235 - Lourdes, Belo Horizonte - MG",
-            "telefone": "(31) 3140-7400",
-            "horario": "Terça a Quinta: 18h - 00h | Sexta e Sábado: 12h - 00h30 | Domingo: 12h - 17h30 | Segunda: fechado",
-            "nota": 4.6,
-            "descricao": "Restaurante italiano com tradição em BH e a maior adega de restaurante da América Latina. Combina receitas tradicionais italianas com ingredientes e inspirações típicos de Minas Gerais. Possui unidades em Lourdes, Savassi e Belvedere.",
-            "imagem": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/43/4b/46/interno.jpg?w=900&h=500&s=1",
-            "site": "https://gennaro.com.br"
-        },
-        {
-            "id": 6,
-            "nome": "Pacato",
-            "categoria": "Alta Gastronomia Contemporânea",
-            "endereco": "Rua Rio de Janeiro, 2735 - Lourdes, Belo Horizonte - MG",
-            "telefone": "(31) 98324-8736",
-            "horario": "Quarta a Sexta: 12h - 15h e 19h - 23h | Sábado e Domingo: 12h - 16h | Terça: fechado | Segunda: fechado",
-            "nota": 4.8,
-            "descricao": "Comandado pelo chef Caio Soter, o Pacato figura entre os 100 Melhores Restaurantes do Brasil 2025. Oferece menu degustação semanal 'Singular' com ingredientes de mercado selecionados pelo chef, aliando técnica refinada e alto padrão de serviço.",
-            "imagem": "https://soubh.uai.com.br/wp-content/uploads/2026/03/Pacato-interior.jpg",
-            "site": "https://pacatobh.com.br"
-        },
-        {
-            "id": 7,
-            "nome": "Trintaeum",
-            "categoria": "Comida Mineira",
-            "endereco": "Rua Professor Antônio Aleixo, 20 - Lourdes, Belo Horizonte - MG",
-            "telefone": "(31) 97141-7308",
-            "horario": "Terça a Sábado: 12h - 15h30 e 19h - 23h | Domingo: 12h - 16h30 | Segunda: fechado",
-            "nota": 4.7,
-            "descricao": "Revelação da cena gastronômica de BH inaugurado em 2024, comandado pela chef Ana Gabriela Costa. Celebra a culinária mineira com ingredientes 100% locais e apresentações contemporâneas, reconhecido entre os destaques dos 100 Melhores Restaurantes do Brasil 2025.",
-            "imagem": "https://trintaeum.com.br/wp-content/uploads/2025/07/P2.webp",
-            "site": "https://trintaeum.com.br"
-        },
-        {
-            "id": 8,
-            "nome": "Província di Salerno",
-            "categoria": "Italiana",
-            "endereco": "Rua Maranhão, 18 - Santa Efigênia, Belo Horizonte - MG",
-            "telefone": "(31) 3241-2205",
-            "horario": "Terça a Sábado: 12h - 15h e 19h - 01h30 | Domingo: 12h - 17h | Segunda: fechado",
-            "nota": 4.6,
-            "descricao": "Fundado em 1983 pelo chef Remo Peluso, é uma das cantinas italianas mais tradicionais do Brasil, com mais de 40 anos de história em BH. Massas artesanais fabricadas no próprio restaurante seguindo métodos tradicionais da região do Cilento, na Itália.",
-            "imagem": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/83/37/db/provinzia-di-salerno.jpg?w=900&h=500&s=1",
-            "site": "https://www.provincia.com.br"
-        },
-        {
-            "id": 9,
-            "nome": "Bar Pirex",
-            "categoria": "Bar Gastronômico",
-            "endereco": "Avenida Amazonas, 1049, loja 54 - Centro, Belo Horizonte - MG",
-            "telefone": null,
-            "horario": "Terça a Sexta: 11h30 - 15h e 18h - 00h | Sábado: 12h - 00h | Domingo: 12h - 18h | Segunda: fechado",
-            "nota": 4.6,
-            "descricao": "Eleito o 9º melhor bar do Brasil pelo ranking EXAME Casual 2025, o Bar Pirex reinterpreta o boteco mineiro com técnica e criatividade. Destaca-se por petiscos inventivos, opções vegetarianas e pratos da estufa preparados diariamente dentro da Galeria São Vicente.",
-            "imagem": "https://bhaz.com.br/wp-content/uploads/2024/03/Bar-Pirex.png",
-            "site": "https://www.instagram.com/barpirex"
-        },
-        {
-            "id": 10,
-            "nome": "Birosca S2",
-            "categoria": "Francesa",
-            "endereco": "Rua São Paulo, 2003 - Lourdes, Belo Horizonte - MG",
-            "telefone": "(31) 99957-7267",
-            "horario": "Terça a Sábado: 12h - 23h | Domingo: 12h - 17h | Segunda: fechado",
-            "nota": 4.4,
-            "descricao": "Bistrô comandado pela chef Bruna Martins com forte influência da culinária francesa e ingredientes de temporada. Figura entre os destaques do ranking EXAME Casual 2025 e no 50Best Discovery, com cardápio criativo e ambiente intimista.",
-            "imagem": "https://www.theworlds50best.com/discovery/filestore/jpg/BiroscaS2-interior.jpg",
-            "site": null
-        },
-        {
-            "id": 11,
-            "nome": "Tatame",
-            "categoria": "Japonesa",
-            "endereco": "Rua Grão Mogol, 872 - Sion, Belo Horizonte - MG",
-            "telefone": "(31) 3227-2069",
-            "horario": "Segunda a Domingo: 12h - 14h30 e 18h - 22h30",
-            "nota": 4.3,
-            "descricao": "Com mais de 20 anos de tradição em BH, o Tatame é referência em gastronomia japonesa na cidade. Oferece cardápio à la carte, self-service e rodízio com cerca de 20 pratos japoneses, reconhecido pela qualidade consistente e ambiente aconchegante no bairro Sion.",
-            "imagem": "images/tatame.html",
-            "site": "https://www.tatamerestaurante.com.br"
-        }
-    ],
-
-    "usuarios": [
-
-
-
-
-
-    ]
+  "restaurantes": [
+    {
+      "id": "1",
+      "nome": "Xapuri",
+      "categoria": "Comida Mineira",
+      "endereco": "Rua Mandacaru, 260 - Pampulha, Belo Horizonte - MG",
+      "telefone": "(31) 3496-6198",
+      "horario": "Terça a Sábado: 11h - 22h | Domingo: 11h - 17h | Segunda: fechado",
+      "nota": 4.6,
+      "descricao": "Fundado em 1987, o Xapuri é referência nacional e internacional da culinária mineira. Ambiente rústico e aconchegante com loja de artesanato, hípica e atrações para crianças. Premiado pelo Guia 4 Rodas, Revista Veja e Encontro como Melhor Restaurante Regional.",
+      "imagem": "images/xapuri.jpg",
+      "site": "https://www.xapurirestaurante.com.br"
+    },
+    {
+      "id": "2",
+      "nome": "Glouton",
+      "categoria": "Alta Gastronomia Contemporânea",
+      "endereco": "Rua Bárbara Heliodora, 59 - Lourdes, Belo Horizonte - MG",
+      "telefone": "(31) 3292-4237",
+      "horario": "Segunda a Sábado: 19h - 23h | Domingo: fechado",
+      "nota": 4.6,
+      "descricao": "Restaurante do premiado chef Léo Paixão, listado entre os melhores da América Latina e do mundo. Gastronomia contemporânea sofisticada com menu degustação em ambiente elegante e intimista no bairro Lourdes.",
+      "imagem": "images/main_Glouton_-_Divulgacao_CAPA.png",
+      "site": "https://www.grupoglouton.com.br"
+    },
+    {
+      "id": "3",
+      "nome": "Dona Lucinha",
+      "categoria": "Comida Mineira",
+      "endereco": "Rua Padre Odorico, 38 - Savassi, Belo Horizonte - MG",
+      "telefone": "(31) 3281-0505",
+      "horario": "Segunda a Sábado: 11h - 22h | Domingo e Feriados: 11h - 17h",
+      "nota": 4.5,
+      "descricao": "Um dos mais tradicionais restaurantes de culinária mineira de BH, batizado em homenagem a Maria Lúcia Clementino Nunes. Referência gastronômica e turística da capital, preserva o gosto e a cultura alimentar dos tempos coloniais de Minas Gerais.",
+      "imagem": "https://imgmd.net/images/v1/guia/1686677/restaurante-dona-lucinha.jpg",
+      "site": "https://www.donalucinha.com.br"
+    },
+    {
+      "id": "4",
+      "nome": "Taste-Vin",
+      "categoria": "Francesa",
+      "endereco": "Rua Curitiba, 2105 - Lourdes, Belo Horizonte - MG",
+      "telefone": "(31) 3292-5423",
+      "horario": "Segunda a Terça: 19h - 23h | Quarta a Sexta: 19h - 00h | Sábado: 12h30 - 16h e 19h - 00h | Domingo: fechado",
+      "nota": 4.6,
+      "descricao": "Fundado em 1988, é um dos restaurantes franceses mais tradicionais de BH. Famoso pelos soufflés e por uma das maiores cartas de vinhos do Brasil, com mais de 800 rótulos. Ambiente intimista e aconchegante.",
+      "imagem": "https://boalembranca-production-secure.nyc3.cdn.digitaloceanspaces.com/826270f4-5a07-443f-9130-884be92690a2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=DO00V3H8NYFP64LYVFNQ%2F20260531%2Fnyc3%2Fs3%2Faws4_request&X-Amz-Date=20260531T025027Z&X-Amz-Expires=86400&X-Amz-Signature=008c097f50944df032c4404d8624b18e31e94faaf3c4f69c3bfd67e80616476f&X-Amz-SignedHeaders=host&response-content-disposition=inline&response-content-type=image%2Fjpeg&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "site": "https://www.tastevinbh.com.br"
+    },
+    {
+      "id": "5",
+      "nome": "Gennaro",
+      "categoria": "Italiana",
+      "endereco": "Rua Santa Catarina, 1235 - Lourdes, Belo Horizonte - MG",
+      "telefone": "(31) 3140-7400",
+      "horario": "Terça a Quinta: 18h - 00h | Sexta e Sábado: 12h - 00h30 | Domingo: 12h - 17h30 | Segunda: fechado",
+      "nota": 4.6,
+      "descricao": "Restaurante italiano com tradição em BH e a maior adega de restaurante da América Latina. Combina receitas tradicionais italianas com ingredientes e inspirações típicos de Minas Gerais. Possui unidades em Lourdes, Savassi e Belvedere.",
+      "imagem": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/43/4b/46/interno.jpg?w=900&h=500&s=1",
+      "site": "https://gennaro.com.br"
+    },
+    {
+      "id": "6",
+      "nome": "Pacato",
+      "categoria": "Alta Gastronomia Contemporânea",
+      "endereco": "Rua Rio de Janeiro, 2735 - Lourdes, Belo Horizonte - MG",
+      "telefone": "(31) 98324-8736",
+      "horario": "Quarta a Sexta: 12h - 15h e 19h - 23h | Sábado e Domingo: 12h - 16h | Terça: fechado | Segunda: fechado",
+      "nota": 4.8,
+      "descricao": "Comandado pelo chef Caio Soter, o Pacato figura entre os 100 Melhores Restaurantes do Brasil 2025. Oferece menu degustação semanal 'Singular' com ingredientes de mercado selecionados pelo chef, aliando técnica refinada e alto padrão de serviço.",
+      "imagem": "https://soubh.uai.com.br/wp-content/uploads/2026/03/Pacato-interior.jpg",
+      "site": "https://pacatobh.com.br"
+    },
+    {
+      "id": "7",
+      "nome": "Trintaeum",
+      "categoria": "Comida Mineira",
+      "endereco": "Rua Professor Antônio Aleixo, 20 - Lourdes, Belo Horizonte - MG",
+      "telefone": "(31) 97141-7308",
+      "horario": "Terça a Sábado: 12h - 15h30 e 19h - 23h | Domingo: 12h - 16h30 | Segunda: fechado",
+      "nota": 4.7,
+      "descricao": "Revelação da cena gastronômica de BH inaugurado em 2024, comandado pela chef Ana Gabriela Costa. Celebra a culinária mineira com ingredientes 100% locais e apresentações contemporâneas, reconhecido entre os destaques dos 100 Melhores Restaurantes do Brasil 2025.",
+      "imagem": "https://trintaeum.com.br/wp-content/uploads/2025/07/P2.webp",
+      "site": "https://trintaeum.com.br"
+    },
+    {
+      "id": "8",
+      "nome": "Província di Salerno",
+      "categoria": "Italiana",
+      "endereco": "Rua Maranhão, 18 - Santa Efigênia, Belo Horizonte - MG",
+      "telefone": "(31) 3241-2205",
+      "horario": "Terça a Sábado: 12h - 15h e 19h - 01h30 | Domingo: 12h - 17h | Segunda: fechado",
+      "nota": 4.6,
+      "descricao": "Fundado em 1983 pelo chef Remo Peluso, é uma das cantinas italianas mais tradicionais do Brasil, com mais de 40 anos de história em BH. Massas artesanais fabricadas no próprio restaurante seguindo métodos tradicionais da região do Cilento, na Itália.",
+      "imagem": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/83/37/db/provinzia-di-salerno.jpg?w=900&h=500&s=1",
+      "site": "https://www.provincia.com.br"
+    },
+    {
+      "id": "9",
+      "nome": "Bar Pirex",
+      "categoria": "Bar Gastronômico",
+      "endereco": "Avenida Amazonas, 1049, loja 54 - Centro, Belo Horizonte - MG",
+      "telefone": null,
+      "horario": "Terça a Sexta: 11h30 - 15h e 18h - 00h | Sábado: 12h - 00h | Domingo: 12h - 18h | Segunda: fechado",
+      "nota": 4.6,
+      "descricao": "Eleito o 9º melhor bar do Brasil pelo ranking EXAME Casual 2025, o Bar Pirex reinterpreta o boteco mineiro com técnica e criatividade. Destaca-se por petiscos inventivos, opções vegetarianas e pratos da estufa preparados diariamente dentro da Galeria São Vicente.",
+      "imagem": "https://bhaz.com.br/wp-content/uploads/2024/03/Bar-Pirex.png",
+      "site": "https://www.instagram.com/barpirex"
+    },
+    {
+      "id": "10",
+      "nome": "Birosca S2",
+      "categoria": "Francesa",
+      "endereco": "Rua São Paulo, 2003 - Lourdes, Belo Horizonte - MG",
+      "telefone": "(31) 99957-7267",
+      "horario": "Terça a Sábado: 12h - 23h | Domingo: 12h - 17h | Segunda: fechado",
+      "nota": 4.4,
+      "descricao": "Bistrô comandado pela chef Bruna Martins com forte influência da culinária francesa e ingredientes de temporada. Figura entre os destaques do ranking EXAME Casual 2025 e no 50Best Discovery, com cardápio criativo e ambiente intimista.",
+      "imagem": "https://www.theworlds50best.com/discovery/filestore/jpg/BiroscaS2-interior.jpg",
+      "site": null
+    },
+    {
+      "id": "11",
+      "nome": "Tatame",
+      "categoria": "Japonesa",
+      "endereco": "Rua Grão Mogol, 872 - Sion, Belo Horizonte - MG",
+      "telefone": "(31) 3227-2069",
+      "horario": "Segunda a Domingo: 12h - 14h30 e 18h - 22h30",
+      "nota": 4.3,
+      "descricao": "Com mais de 20 anos de tradição em BH, o Tatame é referência em gastronomia japonesa na cidade. Oferece cardápio à la carte, self-service e rodízio com cerca de 20 pratos japoneses, reconhecido pela qualidade consistente e ambiente aconchegante no bairro Sion.",
+      "imagem": "images/tatame.html",
+      "site": "https://www.tatamerestaurante.com.br"
+    }
+  ],
+  "usuarios": [
+    {
+      "login": "jufovs",
+      "senha": "123456",
+      "nome": "Julia Otoni Fernandes Vieira",
+      "email": "juliaotoni2@yahoo.com",
+      "id": "MVUXunckT78"
+    },
+    {
+      "login": "arthurcosta",
+      "senha": "123456",
+      "nome": "Arthur de Carvalho Costa",
+      "email": "arthurcosta1973@gmail.com",
+      "id": "Rnfq3dzFK08"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
-
-
