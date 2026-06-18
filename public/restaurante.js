@@ -1,5 +1,7 @@
 const api = 'http://localhost:3000';
 
+let restaurantes = [];
+
 async function carregarRestaurante() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -52,5 +54,30 @@ async function carregarRestaurante() {
         console.error(err);
     }
 }
+
+function addRestaurante (nome, categoria, endereco, telefone, horario, descricao, nota, site, imagem) {
+
+    // Cria um objeto de restaurante para o novo restaurante 
+    let restaurante = { "nome": nome, "categoria": categoria, "endereco": endereco, "telefone": telefone, "horario": horario, "descricao": descricao, "nota": nota, "site": site, "imagem": imagem };
+
+    fetch(api + '/restaurantes', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(restaurante),
+    })
+        .then(response => response.json())
+        .then(data => {
+            restaurantes.push (restaurante);
+            displayMessage("Restaurante inserido com sucesso");
+        })
+        .catch(error => {
+            console.error('Erro ao inserir restaurante via API JSONServer:', error);
+            displayMessage("Erro ao inserir restaurante");
+        });
+    }
+
+
 
 document.addEventListener('DOMContentLoaded', carregarRestaurante);
