@@ -14,7 +14,7 @@
 const LOGIN_URL = "login.html";
 const CADASTRO_URL = "cadastro.html";
 let RETURN_URL = "index.html";
-const API_URL = '/usuarios';
+const API_URL = 'http://localhost:3000/usuarios';
 
 // Objeto para o banco de dados de usuários baseado em JSON
 var db_usuarios = [];
@@ -121,7 +121,7 @@ function usuarioExiste (login, email) {
 function addUser (nome, login, senha, email) {
 
     // Cria um objeto de usuario para o novo usuario 
-    let usuario = { "login": login, "senha": senha, "nome": nome, "email": email };
+    let usuario = { "login": login, "senha": senha, "nome": nome, "email": email, "tipo": "user" };
 
     // Envia dados do novo usuário para ser inserido no JSON Server
     fetch(API_URL, {

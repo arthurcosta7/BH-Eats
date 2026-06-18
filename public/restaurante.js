@@ -3,6 +3,8 @@ const api = 'http://localhost:3000';
 let restaurantes = [];
 
 async function carregarRestaurante() {
+    if (!document.getElementById('restaurante-detalhe')) return;
+
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
 
@@ -81,3 +83,25 @@ function addRestaurante (nome, categoria, endereco, telefone, horario, descricao
 
 
 document.addEventListener('DOMContentLoaded', carregarRestaurante);
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('restaurant-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const nome = document.getElementById('nome').value;
+        const categoria = document.getElementById('categoria').value;
+        const endereco = document.getElementById('endereco').value;
+        const telefone = document.getElementById('telefone').value;
+        const horario = document.getElementById('horario').value;
+        const descricao = document.getElementById('descricao').value;
+        const nota = parseFloat(document.getElementById('nota').value);
+        const site = document.getElementById('site').value;
+        const imagem = document.getElementById('imagem').value;
+
+        if (!nome || !categoria || !endereco || isNaN(nota)) {
+            displayMessage("Por favor, preencha os campos obrigatórios (nome, categoria, endereço, nota).");
+            return;
+        }
+
+        addRestaurante(nome, categoria, endereco, telefone, horario, descricao, nota, site, imagem);
+    });
+});

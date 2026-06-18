@@ -131,6 +131,18 @@
       "descricao": "Com mais de 20 anos de tradição em BH, o Tatame é referência em gastronomia japonesa na cidade. Oferece cardápio à la carte, self-service e rodízio com cerca de 20 pratos japoneses, reconhecido pela qualidade consistente e ambiente aconchegante no bairro Sion.",
       "imagem": "images/tatame.html",
       "site": "https://www.tatamerestaurante.com.br"
+    },
+    {
+      "nome": "TESTE",
+      "categoria": "Comida Mineira",
+      "endereco": "RUA TESTE",
+      "telefone": "31971631741",
+      "horario": "12:00",
+      "descricao": "teste",
+      "nota": 4.4,
+      "site": "https://teste.com",
+      "imagem": "https://teste.com",
+      "id": "NOHmbBuVKT0"
     }
   ],
   "usuarios": [
@@ -140,6 +152,7 @@
       "nome": "Julia Otoni Fernandes Vieira",
       "email": "juliaotoni2@yahoo.com",
       "id": "MVUXunckT78"
+      
     },
     {
       "login": "arthurcosta",

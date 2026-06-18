@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Restaurante</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="restaurante.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">BH Eats</a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="index.html#destaque">Destaque</a></li>
+                <li><a href="index.html#categorias">Categorias</a></li>
+                <li><a href="index.html#top5">Top 5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-page">
+            <a href="index.html" class="voltar-link">← Voltar à página inicial</a>
+            <div class="login-container cadastro-restaurante-container">
+                <h1>Cadastrar Restaurante</h1>
+                <form id="restaurant-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecione a categoria</option>
+                        <option value="Comida Mineira">Comida Mineira</option>
+                        <option value="Alta Gastronomia Contemporânea">Alta Gastronomia Contemporânea</option>
+                        <option value="Francesa">Francesa</option>
+                        <option value="Italiana">Italiana</option>
+                        <option value="Bar Gastronômico">Bar Gastronômico</option>
+                        <option value="Japonesa">Japonesa</option>
+                    </select>
+
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+
+                    <label for="horario">Horário:</label>
+                    <input type="text" id="horario" name="horario">
+
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao"></textarea>
+
+                    <label for="nota">Nota:</label>
+                    <input type="number" id="nota" name="nota" min="0" max="5" step="0.1">
+
+                    <label for="site">Site:</label>
+                    <input type="url" id="site" name="site">
+
+                    <label for="imagem">Imagem:</label>
+                    <input type="url" id="imagem" name="imagem">
+
+                    <button id="botao-cadastrar" type="submit">Cadastrar</button>
+                </form>
+                <p id="cadastro-restaurante-message" class="login-message"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Arthur de Carvalho Costa &nbsp;|&nbsp; Engenharia de Software &nbsp;|&nbsp; Manhã</p>
+    </footer>
+</body>
+</html>
