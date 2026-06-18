@@ -152,7 +152,8 @@
       "nome": "Julia Otoni Fernandes Vieira",
       "email": "juliaotoni2@yahoo.com",
       "id": "MVUXunckT78",
-      "tipo": "user"
+      "tipo": "user",
+      "favoritos": []
     },
     {
       "login": "arthurcosta",
@@ -160,7 +161,10 @@
       "nome": "Arthur de Carvalho Costa",
       "email": "arthurcosta1973@gmail.com",
       "id": "Rnfq3dzFK08",
-      "tipo": "admin"
+      "tipo": "admin",
+      "favoritos": [
+        "9"
+      ]
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

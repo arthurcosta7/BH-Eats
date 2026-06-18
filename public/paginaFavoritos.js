@@ -1,29 +1,25 @@
 const api = 'http://localhost:3000';
 
-async function carregarCategoria() {
-    const params = new URLSearchParams(window.location.search);
-    const categoria = params.get('categoria');
+async function carregarFavoritos() {
+    const lista = document.getElementById('favoritos-lista');
+    if (!lista) return;
 
-    if (!categoria) {
-        window.location.href = 'index.html#categorias';
+    if (!usuarioCorrente.id) {
+        lista.innerHTML = '<p>Você precisa <a href="login.html">fazer login</a> para ver seus favoritos.</p>';
         return;
     }
-
-    document.title = `${categoria} - Restaurantes BH`;
-    document.getElementById('categoria-titulo').textContent = categoria;
 
     try {
         const response = await fetch(api + '/restaurantes');
         const restaurantes = await response.json();
-        const filtrados = restaurantes.filter(r => r.categoria === categoria);
-        const lista = document.getElementById('restaurantes-lista');
+        const favoritos = restaurantes.filter(r => isFavorito(r.id));
 
-        if (!filtrados.length) {
-            lista.innerHTML = '<p>Nenhum restaurante encontrado nesta categoria.</p>';
+        if (!favoritos.length) {
+            lista.innerHTML = '<p>Você ainda não tem restaurantes favoritos.</p>';
             return;
         }
 
-        lista.innerHTML = filtrados.map(r => {
+        lista.innerHTML = favoritos.map(r => {
             const imgHtml = r.imagem && !r.imagem.endsWith('.html')
                 ? `<img src="${r.imagem}" alt="${r.nome}" class="restaurante-card-img">`
                 : `<div class="restaurante-card-img restaurante-card-img--placeholder"></div>`;
@@ -43,8 +39,9 @@ async function carregarCategoria() {
             `;
         }).join('');
     } catch (err) {
-        console.error('Erro ao carregar restaurantes:', err);
+        console.error('Erro ao carregar favoritos:', err);
+        lista.innerHTML = '<p>Erro ao carregar favoritos.</p>';
     }
 }
 
-document.addEventListener('DOMContentLoaded', carregarCategoria);
+document.addEventListener('DOMContentLoaded', carregarFavoritos);

@@ -37,7 +37,10 @@ async function carregarRestaurante() {
             <div class="restaurante-detalhe-content">
                 ${imgHtml}
                 <div class="restaurante-detalhe-info">
-                    <h1>${r.nome}</h1>
+                    <div class="restaurante-detalhe-header">
+                        <h1>${r.nome}</h1>
+                        ${renderFavoritoBtn(r.id)}
+                    </div>
                     <span class="nota nota-grande">${r.nota.toFixed(1)}</span>
                     <p class="categoria-badge">${r.categoria}</p>
                     <p class="restaurante-descricao">${r.descricao}</p>

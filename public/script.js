@@ -112,6 +112,7 @@ function preencherTop5(restaurantes) {
                     <span class="nota">${r.nota.toFixed(1)}</span>
                     <p>${r.categoria} &nbsp;|&nbsp; ${r.endereco}</p>
                 </div>
+                ${renderFavoritoBtn(r.id)}
             </li>
         `;
     }).join('');
