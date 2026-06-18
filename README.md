@@ -24,7 +24,9 @@ npm start
 ```
 
 - Site: http://localhost:3000
-- API: http://localhost:3000/restaurantes
+- API REST:
+  - http://localhost:3000/restaurantes
+  - http://localhost:3000/usuarios
 
 > Ao editar `db/db.json`, é necessário reiniciar o JSON Server.
 
