@@ -117,6 +117,15 @@ function preencherTop5(restaurantes) {
     }).join('');
 }
 
+function atualizarBotaoCadastrarRestaurante() {
+    const item = document.getElementById('cadastrar-restaurante-button');
+    if (!item) return;
+
+    if (typeof usuarioCorrente !== 'undefined' && usuarioCorrente.tipo === 'admin') {
+        item.style.display = '';
+    }
+}
+
 function atualizarBotaoLogin() {
     const link = document.querySelector('#login-button a');
     if (!link) return;
@@ -134,3 +143,4 @@ function atualizarBotaoLogin() {
 
 document.addEventListener('DOMContentLoaded', carregarPagina);
 document.addEventListener('DOMContentLoaded', atualizarBotaoLogin);
+document.addEventListener('DOMContentLoaded', atualizarBotaoCadastrarRestaurante);

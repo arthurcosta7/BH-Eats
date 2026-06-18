@@ -151,15 +151,16 @@
       "senha": "123456",
       "nome": "Julia Otoni Fernandes Vieira",
       "email": "juliaotoni2@yahoo.com",
-      "id": "MVUXunckT78"
-      
+      "id": "MVUXunckT78",
+      "tipo": "user"
     },
     {
       "login": "arthurcosta",
       "senha": "123456",
       "nome": "Arthur de Carvalho Costa",
       "email": "arthurcosta1973@gmail.com",
-      "id": "Rnfq3dzFK08"
+      "id": "Rnfq3dzFK08",
+      "tipo": "admin"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
