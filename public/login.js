@@ -147,7 +147,9 @@ function addUser (nome, login, senha, email) {
 
 // Exibe uma mensagem para o usuário na página atual
 function displayMessage (msg) {
-    var elemMsg = document.getElementById('login-message');
+    const ids = ['login-message', 'cadastro-restaurante-message'];
+    const elemMsg = ids.map(id => document.getElementById(id)).find(Boolean);
+
     if (elemMsg) {
         elemMsg.textContent = msg;
     } else {
@@ -157,9 +159,21 @@ function displayMessage (msg) {
 
 function showUserInfo (element) {
     var elemUser = document.getElementById(element);
-    if (elemUser) {
+    if (!elemUser) return;
+
+    const possuiUsuario = !!(usuarioCorrente && usuarioCorrente.nome);
+    elemUser.style.display = possuiUsuario ? '' : 'none';
+
+    const favoritosLink = document.getElementById('favoritos-link');
+    if (favoritosLink) {
+        favoritosLink.style.display = possuiUsuario ? '' : 'none';
+    }
+
+    if (possuiUsuario) {
         elemUser.innerHTML = `${usuarioCorrente.nome} (${usuarioCorrente.login}) 
-                    <a onclick="logoutUser()">❌</a>`;
+                    <a href="#" onclick="event.preventDefault(); logoutUser();">❌</a>`;
+    } else {
+        elemUser.innerHTML = '';
     }
 }
 

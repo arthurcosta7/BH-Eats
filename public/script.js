@@ -1,4 +1,5 @@
 const api = 'http://localhost:3000';
+let restaurantesData = [];
 
 function comImagem(restaurantes) {
     return restaurantes.filter(r => r.imagem && !r.imagem.endsWith('.html'));
@@ -8,10 +9,29 @@ function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function normalizarTexto(texto = '') {
+    return texto
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+}
+
+function filtrarRestaurantes(restaurantes, termo) {
+    const texto = normalizarTexto(termo);
+    if (!texto) return restaurantes;
+
+    return restaurantes.filter(restaurante => {
+        const nome = normalizarTexto(restaurante.nome || '');
+        const descricao = normalizarTexto(restaurante.descricao || '');
+        return nome.includes(texto) || descricao.includes(texto);
+    });
+}
+
 async function carregarPagina() {
     try {
         const response = await fetch(api + '/restaurantes');
         const restaurantes = await response.json();
+        restaurantesData = restaurantes;
         iniciarCarrossel(restaurantes);
         preencherDestaque(restaurantes);
         preencherCategorias(restaurantes);
@@ -95,6 +115,7 @@ function preencherCategorias(restaurantes) {
 
 function preencherTop5(restaurantes) {
     const top5List = document.getElementById('top5-list');
+    if (!top5List) return;
 
     const top5 = restaurantes.slice()
         .sort((a, b) => b.nota !== a.nota ? b.nota - a.nota : a.nome.localeCompare(b.nome, 'pt-BR', { sensitivity: 'base' }))
@@ -118,6 +139,56 @@ function preencherTop5(restaurantes) {
     }).join('');
 }
 
+function renderizarResultadosBusca(restaurantes, termo = '') {
+    const container = document.getElementById('resultado-busca');
+    if (!container) return;
+
+    const filtrados = filtrarRestaurantes(restaurantes, termo);
+    if (!filtrados.length) {
+        container.innerHTML = '<p class="busca-vazia">Nenhum restaurante encontrado.</p>';
+        return;
+    }
+
+    container.innerHTML = `
+        <h3>Resultados da busca</h3>
+        <ul class="restaurantes-lista">
+            ${filtrados.map(r => `
+                <li class="restaurante-card-wrapper">
+                    <a class="restaurante-card" href="restaurante.html?id=${r.id}">
+                        <img src="${r.imagem || 'assets/images/placeholder.png'}" alt="${r.nome}" class="restaurante-card-img ${r.imagem ? '' : 'restaurante-card-img--placeholder'}">
+                        <div class="restaurante-card-info">
+                            <strong>${r.nome}</strong>
+                            <p>${r.categoria}</p>
+                            <span class="nota">${r.nota.toFixed(1)}</span>
+                            <p>${r.descricao}</p>
+                        </div>
+                    </a>
+                    ${renderFavoritoBtn(r.id)}
+                </li>
+            `).join('')}
+        </ul>
+    `;
+}
+
+function inicializarBusca() {
+    const input = document.getElementById('busca-restaurantes');
+    const container = document.getElementById('resultado-busca');
+    if (!input || !container) return;
+
+    container.innerHTML = '';
+
+    input.addEventListener('input', () => {
+        const termo = input.value.trim();
+        if (!termo) {
+            container.innerHTML = '';
+            return;
+        }
+
+        const filtrados = filtrarRestaurantes(restaurantesData, termo);
+        renderizarResultadosBusca(filtrados, termo);
+    });
+}
+
 function atualizarBotaoCadastrarRestaurante() {
     const item = document.getElementById('cadastrar-restaurante-button');
     if (!item) return;
@@ -128,20 +199,26 @@ function atualizarBotaoCadastrarRestaurante() {
 }
 
 function atualizarBotaoLogin() {
-    const link = document.querySelector('#login-button a');
-    if (!link) return;
+    const item = document.getElementById('login-button-item');
+    const link = document.querySelector('#login-button-item a');
+    if (!item || !link) return;
 
-    if (sessionStorage.getItem('usuarioCorrente')) {
-        link.textContent = 'Logout';
-        link.removeAttribute('href');
+    const estaLogado = !!sessionStorage.getItem('usuarioCorrente');
+
+    if (estaLogado) {
+        item.style.display = 'none';
+    } else {
+        item.style.display = '';
+        link.textContent = 'Login';
+        link.href = 'login.html';
         link.style.cursor = 'pointer';
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            logoutUser();
-        });
+        link.onclick = null;
     }
 }
 
-document.addEventListener('DOMContentLoaded', carregarPagina);
-document.addEventListener('DOMContentLoaded', atualizarBotaoLogin);
-document.addEventListener('DOMContentLoaded', atualizarBotaoCadastrarRestaurante);
+document.addEventListener('DOMContentLoaded', () => {
+    carregarPagina();
+    atualizarBotaoLogin();
+    atualizarBotaoCadastrarRestaurante();
+    inicializarBusca();
+});

@@ -20,9 +20,10 @@
                 <li><a href="#destaque">Destaque</a></li>
                 <li><a href="#categorias">Categorias</a></li>
                 <li><a href="#top5">Top 5</a></li>
-                <li><a href="favoritos.html">Favoritos</a></li>
+                <li id="favoritos-link" style="display:none;"><a href="favoritos.html">Favoritos</a></li>
                 <li id="cadastrar-restaurante-button" style="display:none;"><a href="cadastrarRestaurante.html">Cadastrar Restaurante</a></li>
-                <li id = "login-button"><a href="login.html">Login</a></li>
+                <li id="userInfo" class="user-info" style="display:none;"></li>
+                <li id="login-button-item"><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -32,6 +33,14 @@
             <h1>Bem-vindo ao BH Eats</h1>
             <p>Descubra os melhores restaurantes de Belo Horizonte</p>
             <div id="hero-carousel" class="hero-carousel"></div>
+        </section>
+
+        <section id="buscar" class="busca-section">
+            <div class="busca-wrapper">
+                <label for="busca-restaurantes" class="busca-label">Buscar restaurantes</label>
+                <input type="text" id="busca-restaurantes" class="busca-input" placeholder="Pesquise por nome ou descrição">
+            </div>
+            <div id="resultado-busca" class="resultado-busca"></div>
         </section>
 
         <section id="infos" class="info-section">
